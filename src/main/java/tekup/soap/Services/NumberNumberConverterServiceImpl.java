@@ -20,7 +20,12 @@ public class NumberNumberConverterServiceImpl implements INumberConverterService
     @Override
     public NumberConverter save(NumberConverterDto numberConverterDto) {
         NumberConverter numberConverter = NumberConverterDto.toEntity(numberConverterDto);
-        numberConverter.setConvertResult(numberConverterDto.getConvertTo().equals(TypeConverter.NumberToDollars)?this.convert2dollars(numberConverterDto.getConvertNumber()):this.convert2word(numberConverterDto.getConvertNumber()));
+        String number=numberConverter.getConvertNumber();
+        numberConverter.setConvertResult(
+                numberConverterDto.getConvertTo().equals(TypeConverter.NumberToDollars)
+                ?this.convert2dollars(new BigDecimal(number))
+                :this.convert2word(new BigInteger(number))
+        );
         return this.numberConverterRepository.save(numberConverter);
     }
 
@@ -40,18 +45,21 @@ public class NumberNumberConverterServiceImpl implements INumberConverterService
         return this.numberConverterRepository.findById(idConverter).get();
     }
 
-    public String convert2word(String inputConverter) {
-        BigInteger input_N = new BigInteger(inputConverter);
+    public String convert2word(BigInteger inputConverter) {
+        System.err.println("number "+inputConverter);
+        //BigInteger input_N = new BigInteger(inputConverter);
         NumberConversion NC_service = new NumberConversion(); //created service object
         NumberConversionSoapType NC_serviceSOAP = NC_service.getNumberConversionSoap(); //create SOAP object (a port of the service)
-        return NC_serviceSOAP.numberToWords(input_N);
+        return NC_serviceSOAP.numberToWords(inputConverter);
     }
 
-    public String convert2dollars(String inputConverter) {
-        BigDecimal input_D = new BigDecimal(inputConverter);
+    public String convert2dollars(BigDecimal inputConverter) {
+        System.err.println("number "+inputConverter);
+
+        //BigDecimal input_D = new BigDecimal(inputConverter);
         NumberConversion NC_service = new NumberConversion(); //created service object
         NumberConversionSoapType NC_serviceSOAP = NC_service.getNumberConversionSoap(); //create SOAP object (a port of the service)
-        return NC_serviceSOAP.numberToDollars(input_D);
+        return NC_serviceSOAP.numberToDollars(inputConverter);
     }
 
 }
