@@ -23,8 +23,8 @@ public class NumberNumberConverterServiceImpl implements INumberConverterService
         String number=numberConverter.getConvertNumber();
         numberConverter.setConvertResult(
                 numberConverterDto.getConvertTo().equals(TypeConverter.NumberToDollars)
-                ?this.convert2dollars(new BigDecimal(number))
-                :this.convert2word(new BigInteger(number))
+                        ?this.convert2dollars(new BigDecimal(number))
+                        :this.convert2word(new BigInteger(number))
         );
         return this.numberConverterRepository.save(numberConverter);
     }

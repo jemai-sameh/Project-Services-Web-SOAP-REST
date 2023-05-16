@@ -11,10 +11,10 @@
     <groupId>tekup</groupId>
     <artifactId>soap</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>soap</name>
-    <description>soap</description>
+    <name>projectSOAP</name>
+    <description>projectSOAP</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -37,11 +37,6 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
@@ -51,12 +46,18 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--Swager ui-->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.6.9</version>
         </dependency>
+        <!-- openapi-ui dependency-->
         <!--bind-->
         <dependency>
             <groupId>javax.xml.bind</groupId>

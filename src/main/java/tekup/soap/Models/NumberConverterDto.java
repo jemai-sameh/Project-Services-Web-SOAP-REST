@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -16,7 +19,7 @@ public class NumberConverterDto {
 
     private String ConvertNumber;
 
-    private String ConvertTo;
+    private TypeConverter ConvertTo;
 
     public static NumberConverterDto fromEntity(NumberConverter entity) {
         if (entity == null) {

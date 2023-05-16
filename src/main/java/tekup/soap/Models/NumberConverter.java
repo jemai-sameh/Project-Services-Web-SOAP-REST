@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class NumberConverter {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String ConvertNumber;
