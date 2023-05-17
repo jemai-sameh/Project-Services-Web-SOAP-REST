@@ -69,3 +69,15 @@ amounts.
 #### 8. List of SOAP services with API samples:
 
 - ***https://documenter.getpostman.com/view/8854915/Szf26WHn#b10f59a4-1b0e-4883-bbda-9a9aac7bd81a***
+
+
+# The Api consume in this project :
+I choose to consume the API of the following url : 
+  - https://random-data-api.com/api/v2/credit_cards
+  - https://www.dataaccess.com/webservicesserver/numberconversion.wso?WSDL 
+
+#  TEST
+
+tests are done with swagger
+
+![API!](/test.png)
