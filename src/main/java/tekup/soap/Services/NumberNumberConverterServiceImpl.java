@@ -46,7 +46,6 @@ public class NumberNumberConverterServiceImpl implements INumberConverterService
     }
 
     public String convert2word(BigInteger inputConverter) {
-        System.err.println("number "+inputConverter);
         //BigInteger input_N = new BigInteger(inputConverter);
         NumberConversion NC_service = new NumberConversion(); //created service object
         NumberConversionSoapType NC_serviceSOAP = NC_service.getNumberConversionSoap(); //create SOAP object (a port of the service)
@@ -54,7 +53,6 @@ public class NumberNumberConverterServiceImpl implements INumberConverterService
     }
 
     public String convert2dollars(BigDecimal inputConverter) {
-        System.err.println("number "+inputConverter);
 
         //BigDecimal input_D = new BigDecimal(inputConverter);
         NumberConversion NC_service = new NumberConversion(); //created service object

@@ -13,13 +13,23 @@ import javax.persistence.Enumerated;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class NumberConverterDto {
     private Long id;
 
     private String ConvertNumber;
 
     private TypeConverter ConvertTo;
+
+    public static NumberConverter toEntity(NumberConverterDto entity) {
+        if (entity == null) {
+            return null;
+        }
+
+        NumberConverter dto = new NumberConverter();
+        BeanUtils.copyProperties(entity, dto);
+        return dto;
+    }
+
 
     public static NumberConverterDto fromEntity(NumberConverter entity) {
         if (entity == null) {
@@ -30,13 +40,5 @@ public class NumberConverterDto {
         BeanUtils.copyProperties(entity, dto);
         return dto;
     }
-    public static NumberConverter toEntity(NumberConverterDto entity) {
-        if (entity == null) {
-            return null;
-        }
 
-        NumberConverter dto = new NumberConverter();
-        BeanUtils.copyProperties(entity, dto);
-        return dto;
-    }
 }

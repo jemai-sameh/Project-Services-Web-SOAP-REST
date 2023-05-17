@@ -17,7 +17,7 @@ public class CreditController {
     private ICreditService iCreditService;
     @PostMapping ("/saveData")
     private Credit saveData() {
-         return this.iCreditService.save();
+        return this.iCreditService.save();
     }
     @GetMapping ("/findAllData")
     private List<Credit> findAllData() {
