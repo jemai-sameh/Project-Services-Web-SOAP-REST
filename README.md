@@ -1,8 +1,7 @@
 <h1 text-align="center">Project Services Web : SOAP & REST</h1>
 
 # GOALS 
-The objective is to build a service web using REST to consume two external web services: one REST and one SOAP.
-
+The objective is to develop a web service using REST architecture that consumes data from two external web services: one REST and one SOAP
 
 # DESCRIPTION
 SOAP is an interface allowing a device to use a server service. Search engines, online shops and many other services on the Internet operate via such Web services. SOAP is one of the protocols that allow communication.
